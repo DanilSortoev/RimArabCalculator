@@ -24,8 +24,7 @@ class Calculation {
             if (result < 1) throw new ArithmeticException("В римской системе нет отрицательных чисел!");
             rimResult = rimNums[result - 1];
             System.out.println(rimResult);
-        }
-        else {
+        } else {
             System.out.println(result);
         }
     }

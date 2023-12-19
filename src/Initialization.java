@@ -10,33 +10,27 @@ class Initialization {
                 "LXXXIX", "XC", "XCI", "XCII", "XCIII", "XCIV", "XCV", "XCVI", "XCVII", "XCVIII", "XCIX", "C"
         };
         String[] input = expression.split(" ");
-            if (input.length == 1)
-                throw new ArrayIndexOutOfBoundsException("строка не является математической операцией!");
-            if (input.length != 3)
-                throw new ArrayIndexOutOfBoundsException("формат математической операции не удовлетворяет заданию!");
+        if (input.length == 1)
+            throw new ArrayIndexOutOfBoundsException("строка не является математической операцией!");
+        if (input.length != 3)
+            throw new ArrayIndexOutOfBoundsException("формат математической операции не удовлетворяет заданию!");
         String firstNum = input[0];
         String secondNum = input[2];
         String sign = input[1];
         boolean flag1 = false;
         boolean flag2 = false;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < rimNums.length; i++) {
             if (firstNum.equals(rimNums[i])) {
                 firstNum = String.valueOf(i + 1);
                 flag1 = true;
                 break;
             }
-            else {
-                throw new NumberFormatException("Введите значения от 1 до 10!");
-            }
         }
-        for (int j = 0; j < 10; j++) {
+        for (int j = 0; j < rimNums.length; j++) {
             if (secondNum.equals(rimNums[j])) {
                 secondNum = String.valueOf(j + 1);
                 flag2 = true;
                 break;
-            }
-            else {
-                throw new NumberFormatException("Введите значения от 1 до 10!");
             }
         }
         if ((flag1 && !flag2) || (!flag1 && flag2))
